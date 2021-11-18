@@ -39,28 +39,3 @@ User Should Be Logged In
 Should Be Type Email
     Get Property       ${INPUT_EMAIL}         type    equal    email
 
-
-
-Fill Password
-    [Arguments]     ${user}
-    Fill Text       ${INPUT_PASS}          ${user}[password]
-
-
-Fill Email
-    [Arguments]     ${user}   
-    Fill Text       ${INPUT_EMAIL}          ${user}[email]
-
-Validate email required
-    Wait For Elements State         ${MESSAGE_ERROR_EMAIL}
-    ...         visible     10
-
-Validate password required
-
-    Wait For Elements State         ${MESSAGE_ERROR_PASS} 
-    ...         visible     10
-
-Validate form field
-    Wait For Elements State         ${MESSAGE_ERROR_PASS} 
-    ...         visible     10
-    Wait For Elements State         ${MESSAGE_ERROR_EMAIL}
-    ...         visible     10
