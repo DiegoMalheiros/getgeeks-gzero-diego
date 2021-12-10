@@ -3,7 +3,7 @@ Documentation           Login test suite
 
 Resource                  ../resources/Base.robot
 Test Setup                Start Session
-
+Test Teardown             After Test
 
 *Test Cases*
 User login

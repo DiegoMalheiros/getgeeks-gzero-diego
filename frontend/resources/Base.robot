@@ -4,6 +4,7 @@ Documentation             Base Test
 Library                   Browser
 Library                   factories/Users.py
 Library                   Collections
+Library                   Utils.py
 
 Resource                  actions/_SharedActions.robot
 Resource                  actions/AuthActions.robot
@@ -18,11 +19,12 @@ ${BASE_URL}         https://getgeeks-diego.herokuapp.com
 
 *Keywords*
 Start Session
-    New Browser             chromium        headless=False   slowMo=00:00:00
+    New Browser             ${BROWSER}       headless=${HEADLESS}   slowMo=00:00:00
     New Page                ${BASE_URL} 
     Set Viewport Size       1280    768
 
-Finish Session
-    Take Screenshot     
+After Test
+    ${shot_name}        Screenshot Name
+    Take Screenshot     fullPage=False       filename=${shot_name}
 
 
